@@ -5,13 +5,6 @@ and receiving feedback on the correctness of their guesses. <br/> <br/>
 The main purpose of implementing this game is to practice how to manage global state using React's Context API and the useReducer hook. 
 The game fetches words from the [Random Word API](https://random-word-api.herokuapp.com/).
 
-## Overview
-<img src ="./screenShots/wordle-clone-overview.png">
-
-## Demo
-> This gif shows a brief overview of the project, and it may take a while to load!
-<img src ="./screenShots/wordle-clone-demo.gif">
-
 ## How to Play
  - The game will display a hidden five-letter word at the start. Your goal is to guess this word.
  - Enter your guess in the input field provided. The game will validate your guess and provide feedback.
@@ -24,6 +17,12 @@ The game fetches words from the [Random Word API](https://random-word-api.heroku
  - Once you correctly guess the word, a popup will appear displaying the result of the game, indicating whether you have won or lost.
  - After closing the popup, another game with a different word will start immediately.
 
+## Overview
+<img src ="./screenShots/wordle-clone-overview.png">
+
+## Demo
+> This gif shows a brief overview of the project, and it may take a while to load!
+<img src ="./screenShots/wordle-clone-demo.gif">
 
 ## Usage
 To run this application locally, follow these steps:
