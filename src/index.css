@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
+
+/* Start Global Variables  */
+:root {
+  --mainBackgroundColor: #121213;
+  --borderColor: #3a3a3c;
+  --existsColor: #b59f3b;
+  --correctColor: #538d4e;
+  --wrongColor: #3a3a3c;
+  --keyBackgroundColor: #818384;
+}
+
+/* End Global Variables  */
+
+
+/* Start Global Rules  */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+  background-color: var(--mainBackgroundColor);
+  color: #fff;
+}
+
+.App::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transition: all .3s ease-in;
+}
+
+.App.overlay::before {
+  background-color: rgb(0, 0, 0, .6);
+}
+
+.letter.wrong {
+  background-color: var(--wrongColor);
+  border-color: var(--wrongColor) !important;
+  text-transform: uppercase;
+}
+
+.letter.correct {
+  background-color: var(--correctColor);
+  border-color: var(--correctColor) !important;
+  text-transform: uppercase;
+}
+
+.letter.exists {
+  background-color: var(--existsColor);
+  border-color: var(--existsColor) !important;
+  text-transform: uppercase;
+}
+
+.info-modal .examples .example p span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* End Global Rules  */
+
+
+/* Start Header Styling  */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--borderColor);
+  user-select: none;
+}
+
+
+
+header button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header .info img {
+  width: 35px;
+}
+
+/* End Header Styling  */
+
+
+/* Start Main Styling  */
+main {
+  height: calc(100vh - 60px);
+  padding: 10px;
+  /* background-color: red; */
+}
+
+main>div {
+  width: 600px;
+  max-width: 90%;
+  margin: 10px auto;
+}
+
+/* Start Alert Styling  */
+.alert {
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 18px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  transition: all .3s;
+}
+
+.alert.active {
+  background-color: #B31312;
+}
+
+/* End Alert Styling  */
+
+
+/* Start Wordle Guesses Component Styling  */
+
+.wordle .guess {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 auto 10px;
+}
+
+.wordle .guess .letter {
+  width: 60px;
+  height: 60px;
+  border: 2px solid var(--borderColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  transition: all .3s ease;
+}
+/* End Wordle Guesses Component Styling  */
+
+
+/* Start Keyboard Styling  */
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 5px;
+}
+
+.keyboard .key {
+  width: 50px;
+  height: 60px;
+  max-width: 10%;
+  border-radius: 3px;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--keyBackgroundColor);
+  user-select: none;
+}
+
+.keyboard .key.correct {
+  background-color: var(--correctColor);
+}
+.keyboard .key.exists {
+  background-color: var(--existsColor);
+}
+.keyboard .key.wrong {
+  background-color: var(--wrongColor);
+}
+/* End Keyboard Styling  */
+
+/* End Main Styling  */
+
+
+/* Start Modal Styling  */
+.modal {
+  background-color: var(--mainBackgroundColor);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  max-width: 90%;
+  padding: 40px;
+  border-radius: 8px;
+}
+
+.modal button {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  border: none;
+  background-color: var(--borderColor);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal button img {
+  max-width: 20px;
+}
+
+/* Start Info Modal Styling  */
+
+.info-modal .info-header {
+  margin-top: 20px;
+}
+
+.info-modal .info-header h2 {
+  margin-bottom: 2px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.info-modal .info-header p {
+  font-size: 18px;
+}
+
+.info-modal ul {
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+.info-modal ul li:first-child {
+  margin-bottom: 10px;
+}
+
+.info-modal .examples h3 {
+  margin-bottom: 10px;
+}
+
+.info-modal .examples .example:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.info-modal .examples .example .letters {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.info-modal .examples .example .letters .letter {
+  border: 2px solid var(--borderColor);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: bold;
+}
+/* End Info Modal Styling  */
+
+/* Start Result Modal Styling  */
+.result-modal {
+  height: 400px;
+  max-height: 90%;
+  background-color: #1a1a1b;
+  border: 1px solid var(--borderColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.result-modal img {
+  width: 200px;
+}
+.result-modal h3,
+.result-modal p {
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* End Result Modal Styling  */
+
+/* End Modal Styling  */
